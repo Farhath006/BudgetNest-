@@ -1,0 +1,47 @@
+/* Table spacing */
+tr, td {
+    padding: 10px;
+}
+
+/* Heading */
+h1 {
+    padding: 20px;
+    margin-top: 100px;
+    color: black;
+}
+
+/* Error text */
+.error-text {
+    text-align: center;
+    color: red;
+    font-weight: bold;
+}
+
+/* ✅ Message container (TOP CENTER FIXED) */
+.message-container {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 9999;
+}
+
+/* ✅ Message box */
+.custom-alert {
+    background-color: rgba(40, 167, 69, 0.95);
+    color: white;
+    padding: 8px 16px;
+    border-radius: 6px;
+    font-size: 14px;
+    display: inline-block;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+
+    animation: fadeOut 4s ease-in-out forwards;
+}
+
+/* Fade animation */
+@keyframes fadeOut {
+    0% { opacity: 1; }
+    80% { opacity: 1; }
+    100% { opacity: 0; }
+}

@@ -1,0 +1,36 @@
+
+    .expense-table {
+        margin-top: 20px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+    .table th {
+        background-color: #007bff;
+        color: white;
+    }
+    .table td {
+        vertical-align: middle;
+    }
+    .total-expense-box {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: white;
+        padding: 20px;
+        border-radius: 10px;
+        text-align: center;
+        margin: 20px 0;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    }
+    .total-expense-box h3 {
+        margin: 0;
+        font-size: 18px;
+    }
+    .total-expense-box .amount {
+        font-size: 32px;
+        font-weight: bold;
+        margin-top: 10px;
+    }
+    .no-expenses {
+        text-align: center;
+        margin-top: 50px;
+        font-size: 18px;
+        color: #6c757d;
+    }

@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<body style="background:url('{% static 'images/addmember.jpg' %}');
+            background-size:cover;
+            background-attachment:fixed;
+            background-position:center;">
+
+<h1 align="center">Update Member</h1>
+
+<!-- ✅ Message UI (if needed for success/error) -->
+<div class="container mt-4">
+    {% for message in messages %}
+    <div class="alert alert-success custom-alert text-center" role="alert">
+        {{ message }}
+    </div>
+    {% endfor %}
+</div>
+
+<form action="{% url 'update_member' data.id %}" method="post">
+    {% csrf_token %}
+    <table align="center">
+        <tr>
+            <td>
+                <input class="form-control form-control-lg" type="text" placeholder="First Name" name="firstname" value="{{ data.name }}" required>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input class="form-control form-control-lg" type="number" placeholder="Age" name="age" value="{{ data.age }}" required>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input class="form-control form-control-lg" type="number" placeholder="Income" name="income" value="{{ data.income }}" required>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input type="submit" value="Update Member" class="btn btn-primary btn-lg btn-block">
+            </td>
+        </tr>
+    </table>
+</form>
+
+</body>
+{% endblock %}

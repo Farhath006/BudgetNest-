@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% block content %}
+
+
+<!--<table class="table">-->
+  <table class="table table-bordered table-striped">
+  <thead>
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">NAME</th>
+      <th scope="col">AGE</th>
+      <th scope="col">INCOME</th>
+      <th scope="col">UPDATE</th>
+      <th scope="col">DELETE</th>
+    </tr>
+  </thead>
+  <tbody>
+  {% for i in family_members %}
+    <tr>
+      <th scope="row">{{ i.id }}</th>
+      <td>{{ i.name }}</td>
+      <td>{{ i.age }}</td>
+      <td>{{ i.income }}</td>
+      <td>
+        <a href="{% url 'update_member' i.id %}">update</a>
+
+      </td>
+      <td>
+        <a href="{% url 'delete_member' i.id %}">delete</a>
+
+      </td>
+    </tr>
+{% endfor %}
+  </tbody>
+</table>
+{% endblock %}

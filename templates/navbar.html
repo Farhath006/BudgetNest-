@@ -1,0 +1,48 @@
+<nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+       <a class="navbar-brand" href="{% url 'dashboard' %}">BudgetNest</a>
+
+       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
+           <span class="navbar-toggler-icon"></span>
+       </button>
+
+       <div class="collapse navbar-collapse" id="navbarNav">
+           <ul class="navbar-nav ml-auto">
+
+               <li class="nav-item">
+                   <a class="nav-link" href="{% url 'addmember' %}">Add Family Member</a>
+               </li>
+
+               <li class="nav-item">
+                   <a class="nav-link" href="{% url 'addexpenses' %}">Add Expenses</a>
+               </li>
+
+               <li class="nav-item">
+                   <a class="nav-link" href="{% url 'viewexpenses' %}">View Expenses</a>
+               </li>
+
+               <li class="nav-item">
+                   <a class="nav-link" href="{% url 'familydata' %}">Family</a>
+               </li>
+
+               <li class="nav-item">
+                   <a class="nav-link" href="{% url 'monthly' %}">Monthly</a>
+               </li>
+
+               <li class="nav-item">
+                   <a class="nav-link" href="{% url 'yearly' %}">Yearly</a>
+               </li>
+
+               <li class="nav-item">
+                   <a class="nav-link" href="{% url 'total' %}">Total</a>
+               </li>
+
+               <li class="nav-item">
+                   <form method="POST" action="{% url 'logout' %}" style="display: inline;">
+                       {% csrf_token %}
+                       <button type="submit" class="nav-link btn btn-link text-danger" style="border: none; background: none; cursor: pointer;">Logout</button>
+                   </form>
+               </li>
+
+           </ul>
+       </div>
+   </nav>

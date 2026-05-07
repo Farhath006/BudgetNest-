@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<form action="{% url 'total' %}" method="post">
+    {% csrf_token %}
+    <h1>Monthly Total Expense</h1>
+    <label class="my-1 mr-2" for="inlineFormCustomSelectPref1">Year</label>
+    <select class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref1" name="year">
+        {% for year in years %}
+        <option value="{{ year }}" {% if year == start_year %}selected{% endif %}>{{ year }}</option>
+        {% endfor %}
+    </select>
+    <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Month</label>
+    <select class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref" name="month">
+        {% for month in months %}
+        <option value="{{ forloop.counter }}" {% if forloop.counter == start_month %}selected{% endif %}>{{ month }}</option>
+        {% endfor %}
+    </select>
+    <input type="submit" class="btn btn-primary my-1 mr-2" value="Filter">
+
+    <div>
+        <h1 style="color:blue">Total expense in this month is ---- ₹{{ total_expense }}</h1>
+        <h1 style="color:blue">Yearly expense is--- ₹{{ year_total }}</h1>
+    </div>
+</form>
+
+{% endblock %}

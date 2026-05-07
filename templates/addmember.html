@@ -1,0 +1,58 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<link href="{% static 'css/add_family.css' %}" rel="stylesheet">
+
+<body style="background:url('{% static 'images/family.jpg' %}');
+            background-size:cover;
+            background-attachment:fixed;
+            background-position:center;">
+
+<h1 align="center">Add Member</h1>
+
+<!-- ✅ Message UI -->
+<div class="message-container">
+    {% if messages %}
+        {% for message in messages %}
+            <div class="custom-alert">
+                {{ message }}
+            </div>
+        {% endfor %}
+    {% endif %}
+</div>
+
+{% if null %}
+    <p class="error-text">Please enter income</p>
+{% endif %}
+
+<form action="{% url 'addmember' %}" method="post">
+    {% csrf_token %}
+    <table align="center">
+        <tr>
+            <td>
+                <input class="form-control form-control-lg" type="text" placeholder="Name" name="name">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input class="form-control form-control-lg" type="number" placeholder="Age" name="age">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input class="form-control form-control-lg" type="number" placeholder="Income" name="income">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input type="submit" value="Add To Family Members" class="btn btn-primary btn-lg btn-block">
+            </td>
+        </tr>
+    </table>
+</form>
+
+</body>
+
+{% endblock %}
